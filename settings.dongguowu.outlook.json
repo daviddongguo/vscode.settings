@@ -1,0 +1,336 @@
+{
+  /* #region vim */
+  "vim.leader": "<space>",
+  /* #region easymostion */
+  "vim.easymotion": true,
+  "vim.easymotionMarkerForegroundColorOneChar": "#4CD964",
+  "vim.easymotionMarkerBackgroundColor": "#001122",
+  /* #endregion */
+  "vim.hlsearch": true,
+  "vim.incsearch": true,
+  "vim.surround": true,
+  "vim.useCtrlKeys": true,
+  "vim.foldfix": true,
+  "vim.vimrc.enable": true,
+  "vim.vimrc.path": "~/.vimrc",
+  "vim.camelCaseMotion.enable": true,
+  // "vim.enableNeovim": true,
+  // "vim.neovimPath": "~/neovim/bin/nvim.exe",
+  /* FALSE */
+  // Use the system clipboard register(*) as the default register
+  "vim.useSystemClipboard": false,
+  "vim.smartRelativeLine": false,
+  "vim.debug.loggingLevelForConsole": "debug",
+  "vim.statusBarColorControl": true,
+  "vim.statusBarColors.normal": ["#8FBCBB", "#00008b"],
+  "vim.statusBarColors.easymotioninputmode": ["#8FBCBB", "#00008b"],
+  "vim.statusBarColors.easymotionmode": ["#8FBCBB", "#00008b"],
+  "vim.statusBarColors.searchinprogressmode": ["#a8eb12", "#00008b"],
+  "vim.statusBarColors.replace": ["#ee1029", "#00008b"],
+  "vim.statusBarColors.commandlineinprogress": ["#00C1D6", "#00008b"],
+  "vim.statusBarColors.insert": ["#ee1029", "#00008b"],
+  "vim.statusBarColors.surroundinputmode": ["#00C1D6", "#00008b"],
+  "vim.statusBarColors.visual": ["#a8eb12", "#00008b"],
+  "vim.statusBarColors.visualblock": ["#a8eb12", "#00008b"],
+  "vim.statusBarColors.visualline": ["#a8eb12", "#00008b"],
+  "vim.insertModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-k>"],
+      "after": ["<ESC>"]
+    },
+    {
+      "before": ["<C-j>"],
+      "after": ["<ESC>"]
+    },
+    {
+      "before": ["j", "k"],
+      "after": ["<ESC>"]
+    },
+    {
+      "before": [";", ";"],
+      "after": ["<ESC>", "A"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [" ", " "],
+      "after": ["leader", "leader", "leader", "b", "d", "w"]
+    },
+    //
+    // cursor do not move
+    //
+    // zz: move current line to the middle of the screen
+    // ZZ: save and exit
+    // zt: move current line to the top of the screen
+    // zb: move current line to the bottom of the screen
+    // C-e: move screen down one line
+    // C-y: move screen up one line
+    // move cursor & screen
+    {
+      "before": ["leader", "u"],
+      "after": ["<C-u>"] // move cursor & screen up 1/2 page
+    },
+    {
+      "before": ["leader", "d"],
+      "after": ["<C-d>"] // move cursor & screen down 1/2 page
+    },
+    {
+      "before": ["leader", "f"],
+      "after": ["<C-f>"] // move screen down 1 page
+    },
+    {
+      "before": ["leader", "b"],
+      "after": ["<C-b>"] // move screen up 1 page
+    },
+    {
+      "before": ["leader", "n"],
+      "after": ["n", "z", "z"]
+    },
+    {
+      "before": ["leader", "N"],
+      "after": ["N", "z", "z"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["lineBreakInsert"],
+      "silent": true
+    },
+    {
+      "before": ["leader", "s"],
+      "commands": ["workbench.action.files.save"]
+    },
+    {
+      "before": ["leader", "q"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
+    },
+    {
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
+    }
+    // paste without overriding the current register
+    // {
+    //   "before": ["p"],
+    //   "after": ["p", "g", "v", "y"]
+    // }
+  ],
+  "vim.handleKeys": {
+    "<C-a>": true, // addition on numbers
+    "<C-x>": true, // subtraction on numbers
+    "<C-r>": true, // past the content of any register
+    // 0 or " for the current content in register
+    // "* for the system clipboard
+    "<C-v>": true, // block-wise Visual model
+    "<C-u>": true, // delete back to start
+    "<C-h>": true, // delete back one character = backspace
+    "<C-o>": true, // back between the two files
+    "<C-i>": true, // forth between the two files
+    "<C-w>": true, // delete back one word
+    /* ---------Use for vsCode----------- */
+    "<C-q>": false, // close editor
+    "<C-s>": false, // save
+    "<C-z>": false, // undo
+    "<C-f>": false, // find
+    "<C-b>": false, // toggle sidebar in vscode
+    "<C-c>": false // copy
+  },
+  // end of vim
+  /* #endregion */
+
+  /* #region Text Editor */
+  "editor.fontFamily": "Cascadia Code",
+  // "editor.fontFamily": "'Fira Code'",
+  // parse and join multiple characters into a single logical one
+  // single logical tokens, even if they take two or three characters
+  "editor.fontLigatures": true,
+  "editor.fontSize": 18,
+  "editor.fontWeight": "300",
+  "editor.lineHeight": 24,
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  // "terminal.integrated.fontFamily": "'Fira Code'",
+  "terminal.integrated.fontFamily": "MesloLGS NF", // for powerlevel10k rainbow
+  "editor.inlineSuggest.enabled": true,
+  "editor.wordWrap": "on",
+  /* #region Formatter */
+  "editor.defaultFormatter": "esbenp.prettier-vscode", // Prettier
+  "[csharp]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4
+    // "editor.defaultFormatter": "ms-dotnettools.csharp"
+  },
+  "[xml]": {
+    "editor.insertSpaces": true
+    // "editor.defaultFormatter": "DotJoshJohnson.xml"
+  },
+  "[html, javascript, typescript, json, yaml]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  /* #endregion */
+
+  //
+  "editor.guides.bracketPairs": true,
+  "editor.guides.bracketPairsHorizontal": true,
+  "editor.codeLens": false,
+  "editor.acceptSuggestionOnCommitCharacter": true,
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.autoClosingBrackets": "always",
+  "editor.autoClosingQuotes": "always",
+  "editor.autoSurround": "brackets",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.colorDecorators": false,
+  "editor.cursorStyle": "line",
+  "editor.cursorWidth": 2,
+  "editor.detectIndentation": false,
+  "editor.insertSpaces": false,
+  "editor.matchBrackets": "never",
+  "editor.mouseWheelZoom": true,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.parameterHints.enabled": true,
+  "editor.quickSuggestions": {
+    "other": "on",
+    "comments": "off",
+    "strings": "off"
+  },
+  "editor.quickSuggestionsDelay": 4,
+  "editor.renderWhitespace": "all",
+  "editor.semanticHighlighting.enabled": true,
+  "editor.suggest.localityBonus": true,
+  "editor.suggestOnTriggerCharacters": true,
+  "editor.suggestSelection": "first",
+  "editor.tabCompletion": "on",
+  "editor.tabSize": 2,
+  "editor.wordBasedSuggestions": true,
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.wrappingIndent": "indent",
+
+  // Eslint
+  "editor.codeActionsOnSave": {
+    // "source.fixAll": true
+    "source.fixAll.eslint": true
+  },
+  // end of text editor
+  /* #endregion */
+
+  /* #region Workbench */
+  // show parent folder names in the tabs
+  // show an entire row of breadcrumbs shoing the complete file path
+  "workbench.editor.labelFormat": "short",
+  "breadcrumbs.enabled": true,
+  // "workbench.colorTheme": "Default Dark+",
+  "workbench.colorTheme": "Night Owl",
+  // "workbench.iconTheme": "vscode-icons",
+
+  "workbench.activityBar.visible": true,
+  "workbench.editor.enablePreview": true,
+  "workbench.editor.enablePreviewFromCodeNavigation": true,
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.statusBar.visible": true,
+  "workbench.colorCustomizations": {
+		"activityBar.background": "#000C1D",
+		"activityBar.border": "#102a44",
+		"editorGroup.border": "#102a44",
+		"sideBar.background": "#001122",
+		"sideBar.border": "#102a44",
+		"sideBar.foreground": "#8BADC1",
+		"statusBar.background": "#8FBCBB",
+		"statusBar.noFolderBackground": "#8FBCBB",
+		"statusBar.debuggingBackground": "#8FBCBB",
+		"statusBar.foreground": "#00008b",
+		"statusBar.debuggingForeground": "#00008b"
+	},
+  // "workbench.colorCustomizations": {
+  // 	"statusBar.background": "#a8eb12",
+  // 	"statusBar.noFolderBackground": "#a8eb12",
+  // 	"statusBar.debuggingBackground": "#a8eb12",
+  // 	"statusBar.foreground": "#00008b",
+  // 	"statusBar.debuggingForeground": "#00008b"
+  // },
+  // end of workbench
+  /* #endregion */
+
+  /* #region Window */
+  "window.title": "${rootPath}",
+  /* #endregion */
+
+  /* #region Files */
+
+  "files.autoSave": "onFocusChange",
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+
+  // Hide Node Modules
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true
+  },
+
+  //excludes files & folders in search indexing
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/env": true,
+    "**/venv": true
+  },
+  //excludes files & folders for watcher service
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/env/**": true,
+    "**/venv/**": true,
+    "env-*": true
+  },
+  // end of files
+  /* #endregion */
+
+  /* #region Features */
+  "explorer.confirmDelete": false,
+  "search.followSymlinks": false,
+  /* #endregion */
+
+  /* #region terminal */
+  //select default terminal
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.mouseWheelScrollSensitivity": 2,
+  "terminal.integrated.tabs.enabled": true,
+  "debug.onTaskErrors": "abort",
+  "window.zoomLevel": 2,
+  "debug.javascript.autoAttachFilter": "onlyWithFlag",
+  "security.workspace.trust.untrustedFiles": "open",
+  /* #endregion */
+
+  "omnisharp.path": "latest",
+  "git.autofetch": true
+  /* #region extentions */
+  // night owl
+  // #region floding for vs code by maptz
+  // Prettier - Code formatter
+  // Vim by VSCodeVim
+  // Eslint
+  // vue
+  // js Vue Language Features (Volar)
+  // It's recommended to use take over mode instead of below plugin.
+  // TypeScript Vue Plugin (volar)
+  // Vue VSCode Snippets by sarah.drasner
+  // git lens extension
+  // auto rename tag
+  // quokka by wallaby.js
+  // Debug Visualizer by Henning Dieterichs
+  // DotENV by mikestead
+  /* #endregion */
+}
